@@ -1,0 +1,14 @@
+﻿<ImageManifest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.microsoft.com/VisualStudio/ImageManifestSchema/2014">
+
+  <Symbols>
+    <String Name="Resources" Value="/ThemeColorInspector;component/Resources" />
+    <Guid Name="guidImages" Value="{2cb903e2-572c-423d-ba0b-ce7ca925b742}" />
+    <ID Name="icon" Value="1" />
+  </Symbols>
+
+  <Images>
+    <Image Guid="$(guidImages)" ID="$(icon)">
+      <Source Uri="$(Resources)/icon.xaml" />
+    </Image>
+  </Images>
+</ImageManifest>

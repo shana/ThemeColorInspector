@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PackageManifest Version="2.0.0" xmlns="http://schemas.microsoft.com/developer/vsx-schema/2011" xmlns:d="http://schemas.microsoft.com/developer/vsx-schema-design/2011">
+  <Metadata>
+    <Identity Id="ThemeColorInspector.Andreia Gaita.2549ad1c-b311-480d-a831-b3540e87a288" Version="1.2" Language="en-US" Publisher="Andreia Gaita" />
+    <DisplayName>ThemeColorInspector</DisplayName>
+    <Description xml:space="preserve">Displays all available Visual Studio themed colors of the currently selected theme (from the VsBrush resource strings) and allows searching for similar colors.</Description>
+    <Icon>Resources\icon.gif</Icon>
+    <PreviewImage>Resources\screenshot.png</PreviewImage>
+  </Metadata>
+  <Installation>
+    <InstallationTarget Id="Microsoft.VisualStudio.Pro" Version="[14.0]" />
+  </Installation>
+  <Dependencies>
+    <Dependency Id="Microsoft.Framework.NDP" DisplayName="Microsoft .NET Framework" d:Source="Manual" Version="[4.5,)" />
+    <Dependency Id="Microsoft.VisualStudio.MPF.14.0" DisplayName="Visual Studio MPF 14.0" d:Source="Installed" Version="[14.0]" />
+  </Dependencies>
+  <Assets>
+    <Asset Type="Microsoft.VisualStudio.VsPackage" d:Source="Project" d:ProjectName="%CurrentProject%" Path="|%CurrentProject%;PkgdefProjectOutputGroup|" />
+  </Assets>
+</PackageManifest>
