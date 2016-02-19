@@ -11,7 +11,6 @@ using Microsoft.VisualStudio.PlatformUI;
 
 using System.Collections.Generic;
 using SpoiledCat.Utils.Colors;
-using System.Collections;
 
 namespace ThemeColorInspector
 {
@@ -32,15 +31,26 @@ namespace ThemeColorInspector
             VSColorTheme.ThemeChanged += _ => FillColors();
         }
 
+        SortedDictionary<string, Brush> brushResources = new SortedDictionary<string, Brush>();
         void FillColors()
         {
             container.Children.Clear();
+            brushResources.Clear();
             var props = typeof(VsBrushes).GetProperties(BindingFlags.Static | BindingFlags.Public);
             foreach (var prop in props.Where(x => x.Name.EndsWith("Key")))
             {
                 var name = prop.Name.Substring(0, prop.Name.Length - 3);
+                if (!brushResources.ContainsKey(name))
+                    brushResources.Add(name, (Brush)FindResource("VsBrush." + name));
+            }
+
+            foreach (var kvp in brushResources)
+            {
+                var name = kvp.Key;
+                var brush = kvp.Value;
+
                 var lbl = new Label();
-                lbl.Background = (Brush)FindResource("VsBrush." + name);
+                lbl.Background = brush;
                 var c = (Color)new BrushToColorConverter().Convert(lbl.Background, typeof(Color), null, null);
                 lbl.Content = name + " " + c.R + " " + c.G + " " + c.B + " " + c.ToLowercaseString();
                 lbl.BorderBrush = Brushes.DarkRed;
