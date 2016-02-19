@@ -1,5 +1,5 @@
 # ThemeColorInspector
-A VS extension for browsing the themed colors.
+A VS extension for browsing the themed colors. Download the latest release from the [releases page](https://github.com/shana/ThemeColorInspector/releases/latest).
 
 ![screen shot 2016-02-19 at 6 54 24 pm](https://cloud.githubusercontent.com/assets/310137/13185507/c7fd3514-d741-11e5-9f16-2745eb905cad.png)
 
