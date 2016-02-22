@@ -80,7 +80,7 @@ namespace ThemeColorInspector
 
                 if (searchResults.Count == 0)
                 {
-                    MessageBox.Show("No colors found that match {0}", txt);
+                    MessageBox.Show(string.Format("No colors found that match {0}", txt));
                     return;
                 }
 
@@ -125,9 +125,9 @@ namespace ThemeColorInspector
                 return false;
             }
             byte r, g, b;
-            if (!byte.TryParse(parts[0], out r) ||
-                !byte.TryParse(parts[1], out g) ||
-                !byte.TryParse(parts[2], out b))
+            if (!byte.TryParse(parts[0], System.Globalization.NumberStyles.HexNumber, null, out r) ||
+                !byte.TryParse(parts[1], System.Globalization.NumberStyles.HexNumber, null, out g) ||
+                !byte.TryParse(parts[2], System.Globalization.NumberStyles.HexNumber, null, out b))
             {
                 MessageBox.Show("Invalid rgb values");
                 return false;
